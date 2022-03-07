@@ -6,7 +6,7 @@ from datetime import date
 
 msgFromClient       = "Hello UDP Server"
 
-order = [
+_order = [
     "Dijkhuizen",
     "Schrans",
     "141a",
@@ -17,7 +17,7 @@ order = [
     3,
     "Gorgonzola, Mozzarella, Parmesan"
 ]
-order_to_send = pickle.dumps(order)
+
 
 serverAddressPort   = ("127.0.0.1", 5001)
 
@@ -38,6 +38,30 @@ def success():
 @app.route('/order',methods = ['POST'])
 def order():
     if request.method == 'POST':
+        
+        toppings = ""
+        for topping in request.form.getlist('toppings'):
+            toppings += topping + ", "
+            
+        # check if there are toppings
+        if toppings == "":
+            amount_of_toppings = 0
+        else :
+            amount_of_toppings = len(request.form.getlist('toppings'))
+                 
+        order = [
+            request.form['name'],
+            request.form['street'],
+            request.form['house_number'],
+            request.form['zip_code'],
+            request.form['city'],
+            request.form['pizza'],
+            request.form['amount'],
+            amount_of_toppings,
+            toppings
+            
+        ]
+        order_to_send = pickle.dumps(order)
         UDPClientSocket.sendto(order_to_send, serverAddressPort)
         return redirect(url_for('success'))
     else:
