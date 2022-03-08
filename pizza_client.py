@@ -3,9 +3,9 @@ import socket
 import pickle
 from datetime import date
 
-serverAddressPort = ("127.0.0.1", 5001)
-bufferSize = 1024
-UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
+from UDPSocketClient import UDPSocketClient
+
+udp_socket_client = UDPSocketClient('127.0.0.1', 5001)
 
 app = Flask(__name__)
 
@@ -43,7 +43,7 @@ def order():
             
         ]
         order_to_send = pickle.dumps(order)
-        UDPClientSocket.sendto(order_to_send, serverAddressPort)
+        udp_socket_client.send_order(order_to_send)
         return redirect(url_for('success'))
     else:
         return "error"
