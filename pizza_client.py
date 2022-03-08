@@ -4,8 +4,10 @@ import pickle
 from datetime import date
 
 from UDPSocketClient import UDPSocketClient
+from TCPSocketClient import TCPSocketClient
 
-udp_socket_client = UDPSocketClient('127.0.0.1', 5001)
+# udp_socket_client = UDPSocketClient('127.0.0.1', 5001)
+tcp_socket_client = TCPSocketClient('127.0.0.1', 50000)
 
 app = Flask(__name__)
 

@@ -21,7 +21,7 @@ class Order:
         
     def print_order(self):
         print(self.name)
-        print(self.street + self.house_number)
+        print(self.street + " " + self.house_number)
         print(self.zip_code)
         print(self.city)
         print(self.pizza)
