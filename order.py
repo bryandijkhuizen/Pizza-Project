@@ -8,7 +8,7 @@ supabase: Client = create_client(url, key)
 
 # create an order class
 class Order:
-    def __init__(self, name, street, house_number, zip_code, city, pizza, amount, amount_of_toppings, toppings):
+    def __init__(self, name, street, house_number, zip_code, city, pizza, amount, amount_of_toppings, toppings, date_time):
         self.name = name
         self.street = street
         self.house_number = house_number
@@ -18,6 +18,7 @@ class Order:
         self.amount = amount
         self.amount_of_toppings = amount_of_toppings
         self.toppings = toppings
+        self.date_time = date_time
         
     def print_order(self):
         print(self.name)
@@ -30,6 +31,7 @@ class Order:
         split_toppings = self.toppings.split(", ")
         for topping in split_toppings:
             print(topping)
+        print(self.date_time)
             
     def add_to_database(self):
         data = supabase.table("orders").insert({
@@ -41,6 +43,6 @@ class Order:
             "pizza": self.pizza,
             "amount": self.amount,
             "amount_of_toppings": self.amount_of_toppings,
-            "toppings": self.toppings
+            "toppings": self.toppings,
             }).execute()
         assert len(data.data) > 0   

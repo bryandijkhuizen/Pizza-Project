@@ -1,7 +1,7 @@
 from flask import Flask, redirect, url_for, render_template, request
 import socket
 import pickle
-from datetime import date
+from datetime import datetime
 
 from UDPSocketClient import UDPSocketClient
 from TCPSocketClient import TCPSocketClient
@@ -21,11 +21,13 @@ def index():
 
 @app.route('/success')
 def success():
-    return render_template('success.html')
+    return render_template('success.html', order)
 
 
 @app.route('/order', methods=['POST'])
 def order():
+    now = datetime.now()
+    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     if request.method == 'POST':
 
         toppings = ""
@@ -46,13 +48,14 @@ def order():
             request.form['pizza'],
             request.form['amount'],
             amount_of_toppings,
-            toppings
+            toppings,
+            dt_string
 
         ]
         order_to_send = pickle.dumps(order)
         # udp_socket_client.send_order(order_to_send)
-        tcp_socket_client = TCPSocketClient('127.0.0.1', 5001, order_to_send)
-        return redirect(url_for('success'))
+        TCPSocketClient('127.0.0.1', 5001, order_to_send)
+        return render_template('success.html', order=order)
     else:
         return "error"
 

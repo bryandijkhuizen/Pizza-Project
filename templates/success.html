@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Success</title>
 </head>
 <body>
-    <h1>Success!</h1>
+    <center>
+        <h1 class="font-medium leading-tight text-5xl mt-16 mb-2 text-purple-600">
+            Thank you for your order!
+        </h1>
+    </center>
+
+    <center>
+        <h3>Name: {{ order[0] }}</h3>
+        <h3>Address: {{ order[1] }} {{ order[2] }}</h3>
+        <h3>Zip Code: {{ order[3] }}</h3>
+        <h3>City: {{ order[4] }}</h3>
+        <h3>Pizza: {{ order[5] }}</h3>
+        <h3>Amount: {{ order[6] }}</h3>
+        <h3>Extra Toppings: {{ order[7] }}: {{ order[8] }}</h3>
+        <h3>Time: {{ order[9] }}</h3>
+
+    </center>
+
+
     
 </body>
 </html>

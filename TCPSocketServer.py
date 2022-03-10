@@ -24,7 +24,7 @@ class TCPSocketServer:
                     self.data = pickle.loads(self.conn.recv(1024))
                     if self.data:
                         self.conn.send("Order received".encode())
-                        order = Order(self.data[0], self.data[1], self.data[2], self.data[3], self.data[4], self.data[5], self.data[6], self.data[7], self.data[8])                    
+                        order = Order(self.data[0], self.data[1], self.data[2], self.data[3], self.data[4], self.data[5], self.data[6], self.data[7], self.data[8], self.data[9])
                         order.add_to_database()
                         order.print_order() 
                     
