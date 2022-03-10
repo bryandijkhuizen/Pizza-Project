@@ -2,7 +2,7 @@
 import socket
 import pickle
 
-from order import Order
+from models.order import Order
 
 # create a UDP Socket Server class
 # implement the singleton pattern
