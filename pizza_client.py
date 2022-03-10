@@ -4,11 +4,11 @@ import socket
 import pickle
 from datetime import datetime
 
-from connection import connection_manager
+from config.ConnectionManager import connection_manager
 
 # import the socket client classes
-from UDPSocketClient import UDPSocketClient
-from TCPSocketClient import TCPSocketClient
+from sockets.UDPSocketClient import UDPSocketClient
+from sockets.TCPSocketClient import TCPSocketClient
 
 if connection_manager.default.get_protocol() == "UDP":
     # create an instance of the UDP socket client class and bind it to an ip and port

@@ -1,8 +1,8 @@
 # import the socket server classes
-from UDPSocketServer import UDPSocketServer
-from TCPSocketServer import TCPSocketServer
+from sockets.UDPSocketServer import UDPSocketServer
+from sockets.TCPSocketServer import TCPSocketServer
 
-from connection import connection_manager
+from config.ConnectionManager import connection_manager
 
 if connection_manager.default.get_protocol() == "TCP":
     # create an instance of the tcp server class and bind it to an ip and port

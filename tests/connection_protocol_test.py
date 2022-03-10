@@ -1,4 +1,4 @@
-from connection import ConnectionManager, ConnectionProtocol
+from config.ConnectionManager import ConnectionManager, ConnectionProtocol
 
 connection_manager = ConnectionManager("Pizza Server")
 

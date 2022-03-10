@@ -1,9 +1,9 @@
-from UDPSocketServer import UDPSocketServer
-from UDPSocketClient import UDPSocketClient
+from sockets.UDPSocketServer import UDPSocketServer
+from sockets.UDPSocketClient import UDPSocketClient
 
 
 
-def udp_server_test(passed_tests):
+def udp_server_test():
     server1 = UDPSocketServer('127.0.0.1', 5001)
     server2 = UDPSocketServer('127.0.0.1' , 5002)
     
@@ -14,7 +14,7 @@ def udp_server_test(passed_tests):
     else:
         print("Test 1 Failed")
         
-def udp_client_test(passed_tests):
+def udp_client_test():
     client1 = UDPSocketClient('127.0.0.1', 5001)
     client2 = UDPSocketClient('127.0.0.1', 5002)
     
