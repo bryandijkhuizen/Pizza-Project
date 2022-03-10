@@ -4,11 +4,15 @@ import pickle
 from datetime import date
 
 from UDPSocketClient import UDPSocketClient
+from TCPSocketClient import TCPSocketClient
 
-udp_socket_client = UDPSocketClient('127.0.0.1', 5001)
+# udp_socket_client = UDPSocketClient('127.0.0.1', 5001)
+
+
+
+
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def index():
@@ -46,7 +50,8 @@ def order():
 
         ]
         order_to_send = pickle.dumps(order)
-        udp_socket_client.send_order(order_to_send)
+        # udp_socket_client.send_order(order_to_send)
+        tcp_socket_client = TCPSocketClient('127.0.0.1', 5001, order_to_send)
         return redirect(url_for('success'))
     else:
         return "error"
