@@ -20,7 +20,7 @@ class ConnectionManager:
         self.default = child
         
         
-class ConnectionProtocol:
+class ConnectionElement:
     
     def __init__(self, *args):
         self.position = args[0]
@@ -28,17 +28,15 @@ class ConnectionProtocol:
     def get_protocol(self):
         return self.position
     
-    
-        
 connection_manager = ConnectionManager("Pizza Server")
 
-tcp = ConnectionProtocol("TCP")
-udp = ConnectionProtocol("UDP")
+tcp = ConnectionElement("TCP")
+udp = ConnectionElement("UDP")
 
 connection_manager.add_connection(tcp)
 connection_manager.add_connection(udp)
 
-connection_manager.set_default_connection(tcp)
+connection_manager.set_default_connection(udp)
         
     
     

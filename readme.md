@@ -6,3 +6,9 @@
 
 * Singleton Pattern X
 * Composite Pattern X
+* Visitor Pattern
+
+* Other Patterns
+
+## How does this work?
+

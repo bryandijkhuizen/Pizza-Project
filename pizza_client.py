@@ -69,8 +69,6 @@ def order():
         # encode the order using pickle
         order_to_send = pickle.dumps(order)
         
-        
-        
         if connection_manager.default.get_protocol() == "UDP":
             # use the udp socket client to send the order
             udp_socket_client.send_order(order_to_send)
