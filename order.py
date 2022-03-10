@@ -1,9 +1,13 @@
+# import the pizza right modules
 import socket
 from supabase import create_client, Client
 import pickle
 
+# set the key and url for the supabase database
 url: str = "https://oyovzzulhjculwgaqbvc.supabase.co"
 key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im95b3Z6enVsaGpjdWx3Z2FxYnZjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY0NjY4ODM2MSwiZXhwIjoxOTYyMjY0MzYxfQ.ObnI1PGKqXWdDIKUNvQXnwTaumFl63icbqQdRiS8sAQ"
+
+# create a supabase client using the url and key
 supabase: Client = create_client(url, key)
 
 # create an order class
@@ -20,6 +24,7 @@ class Order:
         self.toppings = toppings
         self.date_time = date_time
         
+    # create a method to print the order
     def print_order(self):
         print(self.name)
         print(self.street + " " + self.house_number)
@@ -32,7 +37,9 @@ class Order:
         for topping in split_toppings:
             print(topping)
         print(self.date_time)
-            
+        
+        
+    # create a method to save the order to the database        
     def add_to_database(self):
         data = supabase.table("orders").insert({
             "name": self.name,
@@ -44,5 +51,7 @@ class Order:
             "amount": self.amount,
             "amount_of_toppings": self.amount_of_toppings,
             "toppings": self.toppings,
+            "order_date_time": self.date_time
             }).execute()
+        # use assert to check if the data was saved
         assert len(data.data) > 0   

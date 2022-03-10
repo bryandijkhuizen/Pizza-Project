@@ -1,8 +1,23 @@
+# import the socket server classes
 from UDPSocketServer import UDPSocketServer
 from TCPSocketServer import TCPSocketServer
 
-# udp_socket_server = UDPSocketServer('127.0.0.1', 5001)
-# udp_socket_server.listen_for_orders()
+from connection import connection_manager
 
-tcp_socket_server = TCPSocketServer('127.0.0.1', 5001)
+if connection_manager.default.get_protocol() == "TCP":
+    # create an instance of the tcp server class and bind it to an ip and port
+    # it will be listening for incoming connections automatically
+    tcp_socket_server = TCPSocketServer('127.0.0.1', 5001)
+    
+elif connection_manager.default.get_protocol() == "UDP":
+    # create an instance of the udp server class and bind it to an ip and port
+    udp_socket_server = UDPSocketServer('127.0.0.1', 5001)
+
+    # listen for orders
+    udp_socket_server.listen_for_orders()
+
+
+
+
+
 
