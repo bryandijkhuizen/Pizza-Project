@@ -7,7 +7,7 @@ from models.order import Order
 # create a TCP socket server class
 # implement the singleton pattern
 
-class TCPSocketServer(object):
+class TCPSocketServer():
     # set an instance variable to None
     __instance = None
     
@@ -24,6 +24,7 @@ class TCPSocketServer(object):
         self.IP = IP
         self.PORT = PORT
         
+    def listen_for_orders(self):
         # create a socket and open stream
         while True:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as self.socket_server:

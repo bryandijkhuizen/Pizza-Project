@@ -36,7 +36,7 @@ udp = ConnectionElement("UDP")
 connection_manager.add_connection(tcp)
 connection_manager.add_connection(udp)
 
-connection_manager.set_default_connection(tcp)
+connection_manager.set_default_connection(udp)
         
     
     

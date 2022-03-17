@@ -3,6 +3,7 @@ import socket
 from supabase import create_client, Client
 import pickle
 
+
 # set the key and url for the supabase database
 url: str = "https://oyovzzulhjculwgaqbvc.supabase.co"
 key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im95b3Z6enVsaGpjdWx3Z2FxYnZjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY0NjY4ODM2MSwiZXhwIjoxOTYyMjY0MzYxfQ.ObnI1PGKqXWdDIKUNvQXnwTaumFl63icbqQdRiS8sAQ"
@@ -24,6 +25,7 @@ class Order:
         self.toppings = toppings
         self.date_time = date_time
         
+        
     # create a method to print the order
     def print_order(self):
         print(self.name)
@@ -32,7 +34,8 @@ class Order:
         print(self.city)
         print(self.pizza)
         print(str(self.amount))
-        print(str(self.amount_of_toppings))
+        if self.amount_of_toppings != 0:
+            print(str(self.amount_of_toppings))
         split_toppings = self.toppings.split(", ")
         for topping in split_toppings:
             print(topping)

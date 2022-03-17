@@ -6,7 +6,7 @@ from models.order import Order
 
 # create a UDP Socket Server class
 # implement the singleton pattern
-class UDPSocketServer(object):
+class UDPSocketServer():
     # set an instance variable to None
     __instance = None
     
@@ -42,7 +42,6 @@ class UDPSocketServer(object):
         while (True):
             # receive the data 
             self.addressPair = self.UDPSocket.recvfrom(self.bufferSize)
-            
             
             # get the data from the address pair
             self.datagram = self.addressPair[0]
