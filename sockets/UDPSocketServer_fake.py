@@ -1,24 +1,23 @@
 # import the necessary packages
 import socket
 import pickle
-import hashing.hash_order as encrypter
 
 
 from models.order import Order
 
 # create a UDP Socket Server class
 # implement the singleton pattern
-class UDPSocketServer():
+class UDPSocketServer_fake():
     # set an instance variable to None
     __instance = None
     
      # create a *magic* method to return the instance
     def __new__(cls, *args, **kwargs):
         # if the instance is None, create a new instance
-        if not UDPSocketServer.__instance:
-            UDPSocketServer.__instance = object.__new__(cls)
+        if not UDPSocketServer_fake.__instance:
+            UDPSocketServer_fake.__instance = object.__new__(cls)
         # otherwise, return the already existing instance
-        return UDPSocketServer.__instance
+        return UDPSocketServer_fake.__instance
     
     def __init__(self, IP, PORT):
         # set the IP and PORT
@@ -50,12 +49,9 @@ class UDPSocketServer():
             
             # get the address from the address pair
             self.address = self.addressPair[1]
-            
-            # decode the data
-            decrypted_order = encrypter.decrypt_message(self.datagram)
 
             # use pickle to decode the data
-            self.data = pickle.loads(decrypted_order)
+            self.data = pickle.loads(self.datagram)
             
             # create an instance of the order class
             order = Order(self.data[0], self.data[1], self.data[2], self.data[3], self.data[4], self.data[5], self.data[6], self.data[7], self.data[8], self.data[9])

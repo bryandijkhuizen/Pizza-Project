@@ -4,6 +4,7 @@ import socket
 import pickle
 from datetime import datetime
 
+
 from config.ConnectionManager import connection_manager
 
 # import the socket client classes
@@ -66,15 +67,13 @@ def order():
 
         ]
         
-        # encode the order using pickle
-        order_to_send = pickle.dumps(order)
         
         if connection_manager.default.get_protocol() == "UDP":
             # use the udp socket client to send the order
-            udp_socket_client.send_order(order_to_send)
+            udp_socket_client.send_order_encrypted(order)
         elif connection_manager.default.get_protocol() == "TCP":
             # use the TCP socket client to send the order
-            TCPSocketClient('127.0.0.1', 5001, order_to_send)
+            TCPSocketClient('127.0.0.1', 5001, order)
         
         # return the order to the success page and pass the order as a variable
         return render_template('success.html', order=order)

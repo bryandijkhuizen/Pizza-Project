@@ -1,6 +1,8 @@
 # import the necessary packages
 import socket
+import pickle
 
+import hashing.hash_order as encrypter
 # create a UDP Socket Client class
 # implement the singleton pattern
 
@@ -30,6 +32,23 @@ class UDPSocketClient(object):
     # create a method to send data
     def send_order(self, order):
         # send the order to the server
-        self.UDPClientSocket.sendto(order, (self.IP, self.PORT))
+        order_to_send = pickle.dumps(order)
+        self.UDPClientSocket.sendto(order_to_send, (self.IP, self.PORT))
+        
+    def send_order_encrypted(self, order):
+        
+        # encrypt the order
+        
+        # generate the key
+        encrypter.generate_key()
+        
+        # dump the order using pickle
+        order_to_send = pickle.dumps(order)
+    
+        # encrypt the order
+        encrypted_order = encrypter.encrypt_message(order_to_send)
+        
+        # send the order to the server
+        self.UDPClientSocket.sendto(encrypted_order, (self.IP, self.PORT))
         
 
