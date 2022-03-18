@@ -2,12 +2,12 @@
 
 # Dependencies and Setup
 
-* [Dependencies](#dependencies)
-    * Pickle
-    * Flask
-    * Supabase
-    * Dotenv
-    * Cryptography
+* Dependencies
+    * Pickle [`pip install pickle`](https://pypi.python.org/pypi/pickle)
+    * Flask [`pip install flask`](https://pypi.python.org/pypi/Flask)
+    * Supabase [`pip install supabase`](https://pypi.python.org/pypi/supabase)
+    * Dotenv [`pip install dotenv`](https://pypi.python.org/pypi/Dotenv)
+    * Cryptography [`pip install cryptography`](https://pypi.python.org/pypi/cryptography)
 ## Checklist
 
 * TCP Server & Client X 
