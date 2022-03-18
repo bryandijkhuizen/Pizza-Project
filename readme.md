@@ -20,7 +20,7 @@
 # Hashing
 * Er wordt gebruik gemaakt van de cryptography library
     * Eerst wordt er een secret key gegenereert, die wordt opgeslagen in een hash.key file
-         Deze key wordt gebruikt om de hash te berekenen.
+         * Deze key wordt gebruikt om de hash te berekenen.
     * Eerst wordt er d.m.v. de Pickle library een dump gemaakt van de Order Array, om te kunnen encrypten.
     * Daarna wordt deze verstuurd en op de server weer ontsleuteld.
     * De pickle data wordt vervolgens weer ingeladen en omgezet to een Order Array.
