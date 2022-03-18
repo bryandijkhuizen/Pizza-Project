@@ -3,7 +3,7 @@
 # Design
 
 * UML diagram
-![alt text](https://github.com/bryandijkhuizen/Pizza-Project/docs/img/default_uml.svg?raw=true)
+![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/default_uml.svg)
 
 # Dependencies and Setup
 
