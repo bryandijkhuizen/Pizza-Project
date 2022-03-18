@@ -5,6 +5,10 @@
 * UML diagram
 ![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/default_uml.svg)
 
+* Network diagram
+![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/default_network.svg)
+
+
 # Dependencies and Setup
 
 * Dependencies
