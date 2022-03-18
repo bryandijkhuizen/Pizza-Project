@@ -37,9 +37,11 @@ def order():
     
     # get the data from the form
     if request.method == 'POST':
-
+        # get the data from the form
+        # use the serializer to serialize the data
         order = serializer.serialize(request, 'Array')
         
+        # check which protocol the user wants to use
         if connection_manager.default.get_protocol() == "UDP":
             # use the udp socket client to send the order
             udp_socket_client.send_order(order)

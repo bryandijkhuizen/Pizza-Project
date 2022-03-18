@@ -1,9 +1,13 @@
-# import the pizza right modules
+# import supabase module
 from supabase import create_client, Client
+
+# import os module
 import os
 
+# import dotenv module
 from dotenv import load_dotenv
 
+# load the .env file
 load_dotenv()
 
 
