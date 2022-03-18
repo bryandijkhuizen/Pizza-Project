@@ -33,7 +33,7 @@
 ### Singleton
 * Singleton Pattern wordt in de Socket Classes (TCPSocketClient, TCPSocketServer, UDPSocketClient, UDPSocketServer) gebruikt om ervoor te zorgen dat er maar 1 socket object wordt aangemaakt.
 
-## How does this work?
+# How does this work?
 
 ### Database Connection
 * Er wordt gebruik gemaakt van een Cloud Database (Supabase: postgresql)
