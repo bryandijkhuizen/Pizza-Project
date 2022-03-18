@@ -1,12 +1,16 @@
 # import the pizza right modules
-import socket
 from supabase import create_client, Client
-import pickle
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # set the key and url for the supabase database
-url: str = "https://oyovzzulhjculwgaqbvc.supabase.co"
-key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im95b3Z6enVsaGpjdWx3Z2FxYnZjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY0NjY4ODM2MSwiZXhwIjoxOTYyMjY0MzYxfQ.ObnI1PGKqXWdDIKUNvQXnwTaumFl63icbqQdRiS8sAQ"
+url: str = os.getenv('DB_URL')
+key: str = os.getenv('DB_KEY')
+
 
 # create a supabase client using the url and key
 supabase: Client = create_client(url, key)
