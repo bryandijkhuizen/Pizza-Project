@@ -27,15 +27,9 @@ class UDPSocketClient(object):
         self.bufferSize = 1024
         
         # create a socket using UDP
-        self.UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
+        self.UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)  
         
-    # create a method to send data
     def send_order(self, order):
-        # send the order to the server
-        order_to_send = pickle.dumps(order)
-        self.UDPClientSocket.sendto(order_to_send, (self.IP, self.PORT))
-        
-    def send_order_encrypted(self, order):
         
         # encrypt the order
         # generate the key

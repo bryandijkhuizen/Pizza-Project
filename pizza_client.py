@@ -42,7 +42,7 @@ def order():
         
         if connection_manager.default.get_protocol() == "UDP":
             # use the udp socket client to send the order
-            udp_socket_client.send_order_encrypted(order)
+            udp_socket_client.send_order(order)
         elif connection_manager.default.get_protocol() == "TCP":
             # use the TCP socket client to send the order
             TCPSocketClient('127.0.0.1', 5001, order)

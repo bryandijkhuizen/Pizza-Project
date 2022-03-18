@@ -1,5 +1,10 @@
 # Pizza Server
 
+# Design
+
+* UML diagram
+![alt text](https://github.com/bryandijkhuizen/Pizza-Project/docs/img/default_uml.svg?raw=true)
+
 # Dependencies and Setup
 
 * Dependencies

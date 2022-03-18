@@ -4,10 +4,6 @@ import pickle
 import hashing.hash_order as encrypter
 from serializer.order_serializer import OrderSerializer
 
-
-
-from models.order import Order
-
 # create a UDP Socket Server class
 # implement the singleton pattern
 class UDPSocketServer():
