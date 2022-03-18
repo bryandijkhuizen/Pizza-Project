@@ -2,10 +2,10 @@
 
 # Design
 
-* UML diagram
+* UML diagram\
 ![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/default_uml.svg)
 
-* Network diagram
+* Network diagram\
 ![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/default_network.svg)
 
 
