@@ -1,4 +1,13 @@
 # Pizza Server
+
+# Dependencies and Setup
+
+* [Dependencies](#dependencies)
+    * Pickle
+    * Flask
+    * Supabase
+    * Dotenv
+    * Cryptography
 ## Checklist
 
 * TCP Server & Client X 

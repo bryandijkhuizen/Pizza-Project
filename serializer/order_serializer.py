@@ -1,8 +1,6 @@
 # create an order serializer
-    # using the Factory Pattern
+# using the Factory Pattern
 
-import json
-import pickle
 from datetime import datetime
 from models.order import Order
 
