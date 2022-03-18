@@ -26,7 +26,13 @@
 * Er wordt gebruik gemaakt van een Cloud Database (Supabase: postgresql)
 * Binnen deze module wordt gebruik gemaakt van de Supabase API die SQL Injections vermijdt (https://github.com/supabase/supabase/discussions/1452)
 
-# Hashing
+# Client Website Frontend
+* Er wordt gebruik gemaakt van Flask (https://pypi.python.org/pypi/Flask)
+* De layout is ontworpen met Tailwind CSS (https://tailwindcss.com/)
+* De input op de HTML pagina wordt d.m.v. een POST request verstuurd naar de client server
+
+
+# Hashing & Encryption
 * Er wordt gebruik gemaakt van de cryptography library
     * Eerst wordt er een secret key gegenereert, die wordt opgeslagen in een hash.key file
          * Deze key wordt gebruikt om de hash te berekenen.
