@@ -1,6 +1,7 @@
 # import the necessary packages
 import socket
 import pickle
+import hashing.hash_order as encrypter
 
 from models.order import Order
 
@@ -45,8 +46,11 @@ class TCPSocketServer():
                     # if the connection is established, print a message
                     print(f"Connected by {self.address}")
                     
+                    # decode the data
+                    decrypted_order = encrypter.decrypt_message(self.connection.recv(1024))
+                    
                     # wait for the data and decode it using pickle
-                    self.data = pickle.loads(self.connection.recv(1024))
+                    self.data = pickle.loads(decrypted_order)
                     
                     # if there is data
                     if self.data:

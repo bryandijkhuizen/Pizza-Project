@@ -2,6 +2,7 @@
 # import the necessary packages
 import socket
 import pickle
+import hashing.hash_order as encrypter
 
 from models.order import Order
 
@@ -32,8 +33,18 @@ class TCPSocketClient(object):
             socket.AF_INET, socket.SOCK_STREAM) as self.socket_client:
             # connect to the server
             self.socket_client.connect((self.IP, self.PORT))
+            
+            # encrypt the order
+            encrypter.generate_key()
+            
+            # dump the order using pickle
+            order_to_send = pickle.dumps(self.order)
+            
+            # encrypt the order
+            encrypted_order = encrypter.encrypt_message(order_to_send)
+            
             # send the order to the server
-            self.socket_client.sendall(self.order)
+            self.socket_client.sendall(encrypted_order)
             # wait for the data and decode it using pickle
             self.order_confirmation = self.socket_client.recv(1024).decode()
             # if the order was confirmed

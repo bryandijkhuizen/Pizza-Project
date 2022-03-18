@@ -38,7 +38,6 @@ class UDPSocketClient(object):
     def send_order_encrypted(self, order):
         
         # encrypt the order
-        
         # generate the key
         encrypter.generate_key()
         
