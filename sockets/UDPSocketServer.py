@@ -2,6 +2,8 @@
 import socket
 import pickle
 import hashing.hash_order as encrypter
+from serializer.order_serializer import OrderSerializer
+
 
 
 from models.order import Order
@@ -24,6 +26,7 @@ class UDPSocketServer():
         # set the IP and PORT
         self.IP = IP
         self.PORT = PORT
+        self.serializer = OrderSerializer()
         
         # set the buffer size to 1024
         self.bufferSize = 1024
@@ -58,7 +61,7 @@ class UDPSocketServer():
             self.data = pickle.loads(decrypted_order)
             
             # create an instance of the order class
-            order = Order(self.data[0], self.data[1], self.data[2], self.data[3], self.data[4], self.data[5], self.data[6], self.data[7], self.data[8], self.data[9])
+            order = self.serializer.serialize(self.data, 'Order')
 
             # add the order to the database
             order.add_to_database()

@@ -2,7 +2,8 @@
 from flask import Flask, redirect, url_for, render_template, request
 import socket
 import pickle
-from datetime import datetime
+
+from serializer.order_serializer import OrderSerializer
 
 
 from config.ConnectionManager import connection_manager
@@ -17,6 +18,7 @@ if connection_manager.default.get_protocol() == "UDP":
 
 # create an instance of Flask
 app = Flask(__name__)
+serializer = OrderSerializer()
 
 # create a route for the home page
 @app.route('/')
@@ -31,42 +33,12 @@ def success():
 # create a route for the order page using a POST method
 @app.route('/order', methods=['POST'])
 def order():
-    # define the date and time
-    current_date_time = datetime.now()
-    date_time_for_order = current_date_time.strftime("%d/%m/%Y %H:%M:%S")
+    
     
     # get the data from the form
     if request.method == 'POST':
 
-        # sest the toppings to an empty list
-        toppings = ""
-        
-        # go through each topping and add it to the list
-        for topping in request.form.getlist('toppings'):
-            toppings += topping + ", "
-
-        # check if there are toppings
-        if toppings == "":
-            amount_of_toppings = 0
-        else:
-            # count the amount of toppings
-            amount_of_toppings = len(request.form.getlist('toppings'))
-            
-        # create an order array and fill it with the data
-        order = [
-            request.form['name'],
-            request.form['street'],
-            request.form['house_number'],
-            request.form['zip_code'],
-            request.form['city'],
-            request.form['pizza'],
-            request.form['amount'],
-            amount_of_toppings,
-            toppings,
-            date_time_for_order
-
-        ]
-        
+        order = serializer.serialize(request, 'Array')
         
         if connection_manager.default.get_protocol() == "UDP":
             # use the udp socket client to send the order

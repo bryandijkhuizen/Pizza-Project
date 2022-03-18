@@ -4,6 +4,7 @@ import socket
 import pickle
 import hashing.hash_order as encrypter
 
+
 from models.order import Order
 
 # create a TCP Socket class
