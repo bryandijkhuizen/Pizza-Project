@@ -75,7 +75,7 @@
     * Als er nog geen server object bestaat wordt er een nieuw server object aangemaakt.
     * In de constructor wordt het IP en de poort gekozen en initialiseer je de serializer
 
-* In de listen_for_orders methode wordt in de while loop gewacht op een connectie.
+* In de listen_for_orders() methode wordt in de while loop gewacht op een connectie.
 * Als er een connectie is wordt er een datastroom aangemaakt geopend om de data te ontvangen.
 * De ontvangen data wordt vervolgens ontsleuteld en als er een Order Array is wordt deze vervolgens omgezet naar een Order object.
 * De order wordt vervolgens in een database opgeslagen en de order wordt op de server afgedrukt.
@@ -87,7 +87,7 @@
     * In de constructor wordt het IP en de poort gekozen en initialiseer je de serializer, ook wordt de buffer grootte ingesteld.
 * Vervolgens wordt het socket object aangemaakt met de gegevens van de UDP server.
 
-* In de listen_for_orders methode wordt in de while loop gewacht op data (in tegenstelling tot bij TCP waar een connectie nodig is).
+* In de listen_for_orders() methode wordt in de while loop gewacht op data (in tegenstelling tot bij TCP waar een connectie nodig is).
 
 * De ontvangen data wordt vervolgens ontsleuteld en als er een Order Array is wordt deze vervolgens omgezet naar een Order object.
 * De order wordt vervolgens in een database opgeslagen en de order wordt op de server afgedrukt.
@@ -112,6 +112,6 @@
     * Als er nog geen client object bestaat wordt er een nieuw client object aangemaakt.
     * In de constructor wordt het IP, de poort, de buffer grootte geinitialiseerd en ook wordt er een socket object aangemaakt.
 
-* In de send_order methode:
+* In de send_order() methode:
     * Voordat de data versleuteld kan worden moet er een sleutel worden gegenereerd.
     * Dan wordt de order omgezet naar een Pickle object, deze wordt versleuteld en vervolgens verstuurd.
