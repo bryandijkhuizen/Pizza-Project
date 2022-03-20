@@ -22,6 +22,7 @@
     * Supabase [`pip install supabase`](https://pypi.python.org/pypi/supabase)
     * Dotenv [`pip install dotenv`](https://pypi.python.org/pypi/Dotenv)
     * Cryptography [`pip install cryptography`](https://pypi.python.org/pypi/cryptography)
+    * Py OpenSSL [`pip install pyOpenSSL`](https://pypi.python.org/pypi/pyOpenSSL)
 ## Checklist
 
 * TCP Server & Client X 
@@ -58,6 +59,7 @@
 * Er wordt gebruik gemaakt van Flask (https://pypi.python.org/pypi/Flask)
 * De layout is ontworpen met Tailwind CSS (https://tailwindcss.com/)
 * De input op de HTML pagina wordt d.m.v. een POST request verstuurd naar de client server
+* De Flask server draait op HTTPS en wordt geconfigureerd met een self-signed certificaat (https://letsencrypt.org/)
 
 
 ### Hashing & Encryption
