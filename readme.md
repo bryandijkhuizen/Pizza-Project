@@ -33,6 +33,16 @@
 ### Singleton
 * Singleton Pattern wordt in de Socket Classes (TCPSocketClient, TCPSocketServer, UDPSocketClient, UDPSocketServer) gebruikt om ervoor te zorgen dat er maar 1 socket object wordt aangemaakt.
 
+### Composite
+* In de CommunicationManager wordt een Composite structuur gebruikt om een lijst met alle soorten protocollen te maken en zo kan er een worden geslecteerd zonder dat in elke klasse een een aanpassing moet worden gemaakt.
+
+* Er is een if statement in the pizza_client en pizza_server classes die checkt welke protocol er gebruikt moet worden. (TCP of UDP)
+
+### Factory 
+* Het Factory Pattern wordt gebruikt in order_serializer.py om de juiste order serializer te kiezen.
+
+* Zo kan een order makkelijk worden omgezet naar een Pickle object of een order object.
+
 # How does this work?
 
 ### Database Connection
