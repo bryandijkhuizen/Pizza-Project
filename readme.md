@@ -34,20 +34,25 @@
 
 * Other Patterns
     * Factory Pattern X
+    * Facade Pattern X
 
 ## Design Patterns Used
-### Singleton
+### Singleton (https://refactoring.guru/design-patterns/singleton)
 * Singleton Pattern wordt in de Socket Classes (TCPSocketClient, TCPSocketServer, UDPSocketClient, UDPSocketServer) gebruikt om ervoor te zorgen dat er maar 1 socket object wordt aangemaakt.
 
-### Composite
+### Composite (https://refactoring.guru/design-patterns/composite)
 * In de CommunicationManager wordt een Composite structuur gebruikt om een lijst met alle soorten protocollen te maken en zo kan er een worden geslecteerd zonder dat in elke klasse een een aanpassing moet worden gemaakt.
 
 * Er is een if statement in the pizza_client en pizza_server classes die checkt welke protocol er gebruikt moet worden. (TCP of UDP)
 
-### Factory 
+### Factory (https://refactoring.guru/design-patterns/factory-method)
 * Het Factory Pattern wordt gebruikt in order_serializer.py om de juiste order serializer te kiezen.
 
 * Zo kan een order makkelijk worden omgezet naar een Pickle object of een order object.
+
+### Facade (https://refactoring.guru/design-patterns/facade)
+
+* Het Facade Pattern wordt gebruikt door voor het gebruik van de SocketServers en SocketClients verschillende klassen te gebruiken zodat deze complexe klassen enkel in pizza_client.py en pizza_server.py gebruikt hoeven te worden.
 
 # How does this work?
 
