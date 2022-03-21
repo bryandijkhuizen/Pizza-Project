@@ -4,6 +4,10 @@ import pickle
 import hashing.hash_order as encrypter
 from serializer.order_serializer import OrderSerializer
 
+# import commands
+from patterns.commands.AddToDatabase import AddToDatabase
+from patterns.commands.PrintOrder import PrintOrder
+
 # create a UDP Socket Server class
 # implement the singleton pattern
 class UDPSocketServer():
@@ -60,7 +64,7 @@ class UDPSocketServer():
             order = self.serializer.serialize(self.data, 'Order')
 
             # add the order to the database
-            order.add_to_database()
+            AddToDatabase(order).execute()
             
             # print the order
-            order.print_order()
+            PrintOrder(order).execute()

@@ -4,6 +4,11 @@ import pickle
 import hashing.hash_order as encrypter
 from serializer.order_serializer import OrderSerializer
 
+# import commands
+from patterns.commands.AddToDatabase import AddToDatabase
+from patterns.commands.PrintOrder import PrintOrder
+
+
 from models.order import Order
 
 # create a TCP socket server class
@@ -64,10 +69,10 @@ class TCPSocketServer():
                         order = self.serializer.serialize(self.data, 'Order')
                         
                         # add the order to the database
-                        order.add_to_database()
+                        AddToDatabase(order).execute()
                         
                         # print the order
-                        order.print_order() 
+                        PrintOrder(order).execute()
                         
                     # if there is no data
                     else: 

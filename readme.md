@@ -54,6 +54,10 @@
 
 * Het Facade Pattern wordt gebruikt door voor het gebruik van de SocketServers en SocketClients verschillende klassen te gebruiken zodat deze complexe klassen enkel in pizza_client.py en pizza_server.py gebruikt hoeven te worden.
 
+### Command (https://refactoring.guru/design-patterns/command)
+
+* Het Command Pattern wordt gemaakt in patterns/commands/ en de commands (PrintOrder & AddToDatabase) worden in de Server klassen van de Sockets gebruikt.
+
 # How does this work?
 
 ### Database Connection
