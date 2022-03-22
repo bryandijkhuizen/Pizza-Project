@@ -1,17 +1,25 @@
 # import the required modules
+# import Flask
 from flask import Flask, redirect, url_for, render_template, request
+
+# import the socket module
 import socket
+
+# import the pickle module
 import pickle
 
+# import the serializer class
 from serializer.order_serializer import OrderSerializer
 
-
+# import the connection mananger class
 from config.ConnectionManager import connection_manager
 
 # import the socket client classes
 from sockets.UDPSocketClient import UDPSocketClient
 from sockets.TCPSocketClient import TCPSocketClient
 
+
+# check for the default protocol
 if connection_manager.default.get_protocol() == "UDP":
     # create an instance of the UDP socket client class and bind it to an ip and port
     udp_socket_client = UDPSocketClient('127.0.0.1', 5001)

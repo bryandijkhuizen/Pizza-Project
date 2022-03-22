@@ -1,11 +1,15 @@
 # import the necessary packages
+# import the socket module
 import socket
+
+# import the pickle module
 import pickle
 
+# import the encryption module
 import hashing.hash_order as encrypter
+
 # create a UDP Socket Client class
 # implement the singleton pattern
-
 class UDPSocketClient(object):
     # set an instance variable to None
     __instance = None

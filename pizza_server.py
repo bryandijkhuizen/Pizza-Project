@@ -4,8 +4,10 @@ from sockets.TCPSocketServer import TCPSocketServer
 
 # from sockets.UDPSocketServer_fake import UDPSocketServer_fake
 
+# import the connection manager class
 from config.ConnectionManager import connection_manager
 
+# check for the default protocol 
 if connection_manager.default.get_protocol() == "TCP":
     # create an instance of the tcp server class and bind it to an ip and port
     # it will be listening for incoming connections automatically
