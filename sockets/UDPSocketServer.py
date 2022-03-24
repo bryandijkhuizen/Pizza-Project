@@ -4,6 +4,7 @@ import pickle
 import hashing.hash_order as encrypter
 from serializer.order_serializer import OrderSerializer
 
+
 # import commands
 from patterns.commands.AddToDatabase import AddToDatabase
 from patterns.commands.PrintOrder import PrintOrder

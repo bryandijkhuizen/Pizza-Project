@@ -11,8 +11,12 @@
 * Network diagram\
 ![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/default_network.svg)
 
+### Folder Structure
 
-
+    .
+    ├── config
+    |   ├── ConnectionManager.py
+    └── readme.md
 
 # Dependencies and Setup
 
@@ -23,19 +27,6 @@
     * Dotenv [`pip install dotenv`](https://pypi.python.org/pypi/Dotenv)
     * Cryptography [`pip install cryptography`](https://pypi.python.org/pypi/cryptography)
     * Py OpenSSL [`pip install pyOpenSSL`](https://pypi.python.org/pypi/pyOpenSSL)
-## Checklist
-
-* TCP Server & Client X 
-* UDP Server & Client X
-
-* Singleton Pattern X
-* Composite Pattern X
-* Visitor Pattern
-
-* Other Patterns
-    * Factory Pattern X
-    * Facade Pattern X
-
 ## Design Patterns Used
 ### Singleton (https://refactoring.guru/design-patterns/singleton)
 * Singleton Pattern wordt in de Socket Classes (TCPSocketClient, TCPSocketServer, UDPSocketClient, UDPSocketServer) gebruikt om ervoor te zorgen dat er maar 1 socket object wordt aangemaakt.
@@ -68,7 +59,6 @@
 * Er wordt gebruik gemaakt van Flask (https://pypi.python.org/pypi/Flask)
 * De layout is ontworpen met Tailwind CSS (https://tailwindcss.com/)
 * De input op de HTML pagina wordt d.m.v. een POST request verstuurd naar de client server
-* De Flask server draait op HTTPS en wordt geconfigureerd met een self-signed certificaat (https://letsencrypt.org/)
 
 
 ### Hashing & Encryption
