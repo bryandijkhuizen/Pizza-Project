@@ -1,19 +1,25 @@
 # import the necessary packages
+# import the socket module
 import socket
+
+# import the pickle module
 import pickle
+
+# import the encryption module
 import hashing.hash_order as encrypter
+
+# import the serializer class
 from serializer.order_serializer import OrderSerializer
 
 # import commands
 from patterns.commands.AddToDatabase import AddToDatabase
 from patterns.commands.PrintOrder import PrintOrder
 
-
+# import the order class/model
 from models.order import Order
 
 # create a TCP socket server class
 # implement the singleton pattern
-
 class TCPSocketServer():
     # set an instance variable to None
     __instance = None

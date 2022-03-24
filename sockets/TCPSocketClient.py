@@ -1,15 +1,19 @@
 
 # import the necessary packages
+# import the socket module
 import socket
+
+# import the pickle module
 import pickle
+
+# import the encryption module
 import hashing.hash_order as encrypter
 
-
+# import the order class/module
 from models.order import Order
 
 # create a TCP Socket class
 # implement the singleton pattern
-
 class TCPSocketClient(object):
     # set an instance variable to None
     __instance = None
