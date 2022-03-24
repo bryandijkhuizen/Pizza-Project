@@ -17,6 +17,7 @@ from config.ConnectionManager import connection_manager
 # import the socket client classes
 from sockets.UDPSocketClient import UDPSocketClient
 from sockets.TCPSocketClient import TCPSocketClient
+from sockets.TCPTLSSocketClient import TCPSSLSocketClient
 
 
 # check for the default protocol
@@ -56,6 +57,9 @@ def order():
         elif connection_manager.default.get_protocol() == "TCP":
             # use the TCP socket client to send the order
             TCPSocketClient('127.0.0.1', 5001, order)
+        elif connection_manager.default.get_protocol() == "TCP/TLS":
+            
+            TCPSSLSocketClient('127.0.0.1', 5001, order)
         
         # return the order to the success page and pass the order as a variable
         return render_template('success.html', order=order)

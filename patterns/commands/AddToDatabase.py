@@ -1,7 +1,6 @@
 
 from patterns.commands.Command import Command
 from supabase import create_client, Client
-
 # import os module
 import os
 

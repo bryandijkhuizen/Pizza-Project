@@ -1,6 +1,7 @@
 # import the socket server classes
 from sockets.UDPSocketServer import UDPSocketServer
 from sockets.TCPSocketServer import TCPSocketServer
+from sockets.TCPTLSSocketServer import TCPSSLSocketServer
 
 # from sockets.UDPSocketServer_fake import UDPSocketServer_fake
 
@@ -22,6 +23,13 @@ elif connection_manager.default.get_protocol() == "UDP":
 
     # listen for orders
     udp_socket_server.listen_for_orders()
+    
+elif connection_manager.default.get_protocol() == "TCP/TLS":
+
+    tcp_tls_socket_server = TCPSSLSocketServer('127.0.0.1', 5001)
+    tcp_tls_socket_server.listen_for_orders()
+    
+    
 
 
 

@@ -38,13 +38,15 @@ connection_manager = ConnectionManager("Pizza Server")
 # create connection protocols
 tcp = ConnectionElement("TCP")
 udp = ConnectionElement("UDP")
+tcp_tls = ConnectionElement("TCP/TLS")
 
 # add the connection protocols to the connection manager
 connection_manager.add_connection(tcp)
 connection_manager.add_connection(udp)
+connection_manager.add_connection(tcp_tls)
 
 # set the default connection
-connection_manager.set_default_connection(tcp)
+connection_manager.set_default_connection(tcp_tls)
         
     
     
