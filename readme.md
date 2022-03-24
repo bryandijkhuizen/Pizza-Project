@@ -16,6 +16,38 @@
     .
     ├── config
     |   ├── ConnectionManager.py
+    ├── docs
+    |   ├── img
+    |   |   ├── default_uml.svg
+    |   |   ├── default_network.svg
+    |   |   ├── activity_diagram.svg
+    ├── hashing
+    |   ├── hash_order.py
+    |   ├── hash.key
+    ├── models
+    |   ├── order.py
+    ├── patterns
+    |   ├── commands
+    |   |   ├── Command.py
+    |   |   ├── PrintOrder.py
+    |   |   ├── AddToDatabase.py
+    ├── serializor
+    |   ├── order_serializor.py
+    ├── sockets
+    |   ├── TCPSocketClient.py
+    |   ├── TCPSocketServer.py
+    |   ├── UDPSocketClient.py
+    |   ├── UDPSocketServer.py
+    ├── templates
+    |   ├── index.html
+    |   ├── success.html
+    ├── tests
+    |   ├── connection_protocol_test.py
+    |   ├── singleton_test.py
+    ├── .env
+    ├── .gitignore
+    ├── pizza_client.py
+    ├── pizza_server.py
     └── readme.md
 
 # Dependencies and Setup
