@@ -3,16 +3,16 @@
 # Design
 
 * UseCase diagram\
-![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/usecase_diagram.png)
+![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/usecase_diagram.svg)
 
 * Class diagram\
 ![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/default_uml.svg)
 
 * Sequence diagram\
-![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/sequence_diagram.png)
+![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/sequence_diagram.svg)
 
 * State diagram\
-![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/statemachine_diagram.png)
+![alt text](https://github.com/bryandijkhuizen/Pizza-Project/blob/master/docs/img/statemachine_diagram.svg)
 
 
 * Network diagram\
