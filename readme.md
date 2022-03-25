@@ -13,7 +13,6 @@
 
 ### Folder Structure
 
-    .
     ├── config
     |   ├── ConnectionManager.py
     ├── docs
