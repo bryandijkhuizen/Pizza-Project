@@ -46,7 +46,7 @@ connection_manager.add_connection(udp)
 connection_manager.add_connection(tcp_tls)
 
 # set the default connection
-connection_manager.set_default_connection(tcp_tls)
+connection_manager.set_default_connection(udp)
         
     
     
