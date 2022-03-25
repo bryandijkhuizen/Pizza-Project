@@ -196,4 +196,4 @@ $ python3 pizza_client.py
 
 
 # Demo Video
-![Demo video](https://youtu.be/LJt8xpKzehg)
+ * Watch DEMO Video (https://youtu.be/LJt8xpKzehg)
