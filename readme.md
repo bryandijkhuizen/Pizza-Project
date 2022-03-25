@@ -60,6 +60,18 @@
     * Dotenv [`pip install dotenv`](https://pypi.python.org/pypi/Dotenv)
     * Cryptography [`pip install cryptography`](https://pypi.python.org/pypi/cryptography)
     * Py OpenSSL [`pip install pyOpenSSL`](https://pypi.python.org/pypi/pyOpenSSL)
+
+# Run Server & Client
+For Server
+```bash
+$ python3 pizza_server.py
+```
+
+For Client
+```bash
+$ python3 pizza_client.py
+```
+
 ## Design Patterns Used
 ### Singleton (https://refactoring.guru/design-patterns/singleton)
 * Singleton Pattern wordt in de Socket Classes (TCPSocketClient, TCPSocketServer, UDPSocketClient, UDPSocketServer) gebruikt om ervoor te zorgen dat er maar 1 socket object wordt aangemaakt.
